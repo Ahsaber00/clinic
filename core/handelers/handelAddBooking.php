@@ -63,8 +63,6 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             "phone"=>$phone,
             "email"=>$email
         ];
-        $booking1=new BookingDetails();
-        $booking1->addBookingDetail($bookingData);
         $booking=new Booking();
         $booking->addbooking($bookingData);
         $sucsess='You have booked an appiontment succesfully';
