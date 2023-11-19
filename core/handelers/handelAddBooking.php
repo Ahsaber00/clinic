@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
         $booking->addbooking($bookingData);
         $sucsess='You have booked an appiontment succesfully';
         $_SESSION['sucsess']=$sucsess;
-        reDirect('../../doctors/doctor.php');
+        reDirect('../../doctors/doctor.php?id=' . $doctor_id);
         
     }
     
