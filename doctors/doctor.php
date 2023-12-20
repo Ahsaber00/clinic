@@ -72,7 +72,7 @@ if(!isset($_SESSION['auth']))
                         echo $doctorData['name'];
                         ?>
                     </li>
-                </ol>
+                </ol> 
             </nav>
             <div class="d-flex flex-column gap-3 details-card doctor-details">
                 <div class="details d-flex gap-2 align-items-center">
@@ -103,8 +103,19 @@ if(!isset($_SESSION['auth']))
                     </div>
                 </div>
                 <hr />
+            <?php if(isset($_SESSION['sucsess'])):
+              $succesMassege = $_SESSION["sucsess"];
+            ?>
+            <div class="alert alert-success" role="alert">
+              <?php
+                echo "$succesMassege"; 
+                
+              ?> 
+            </div>
+              
+              <?php unset($_SESSION["sucsess"])?>
                 <?php 
-                if(isset($_SESSION['errors'])):
+                elseif(isset($_SESSION['errors'])):
                     foreach($_SESSION['errors'] as $error):
                 ?>
                         <div class="alert alert-danger text-center">
